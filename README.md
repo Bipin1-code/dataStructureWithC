@@ -1,6 +1,6 @@
-This repository contains the inforamation about #Data Structure and Algorithm implementation With C
+This repository contains the inforamation about #Data Structure and Algorithms implementation With C
 All the implementation and example are highly used in real life scenarios.
-Note:  All these programs or code can be farther optimize And try to figure out the most efficient approach or strategy which fellow modularity, efficient and less time and space complexity
-      Above present codes are just the example of first step.
-      In Future I'll also update code with more effective strategy to do same work.
-      Stay tune... and Don't forgot to fellow.
+Note:  All these programs or codes can be farther optimize. Try to figure out the most efficient approach or strategy which follow up, "modularity, efficient and less time and space complexity".
+      Above present codes are just the examples of first step.
+      In Future I'll also update code with more effective strategy.
+      Stay tune... and Don't forgot to follow.
