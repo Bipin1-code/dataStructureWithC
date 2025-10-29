@@ -127,9 +127,8 @@ int getVIndex(Graph *g, const char *label){
       g->visited[i] = 0;
     }
   }
-  int index = g->vertices;
+  int index = g->vertices++;
   strncpy(g->labels[index], label, 20);
-  g->vertices++;
 
   return index;
 }
