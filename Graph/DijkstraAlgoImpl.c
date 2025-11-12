@@ -159,7 +159,7 @@ void display_rDist(Graph *g, int rDist[], int pathTracker[]){
   printf("Home\n");
 }
 
-void unknownShortPathAlgo(Graph *g, const char *start){
+void dijkstraAlgo(Graph *g, const char *start){
   int rDist[g->numNode];
   memset(rDist, 0x3f, sizeof rDist);
   int pathTracker[g->numNode];
@@ -197,7 +197,7 @@ void unknownShortPathAlgo(Graph *g, const char *start){
       j++;
     }
   }
-  //Our main destionation is E so, we need maker it as 1
+  //(optional) Our main destionation is E so, we need maker it as 1 just for to print 
   pathTracker[g->numNode-1] = 1; 
   display_rDist(g, rDist, pathTracker);
 }
@@ -226,8 +226,7 @@ int main(){
 
   displayNodesEdgesList(g);
  
-  //Experiment
-  unknownShortPathAlgo(g, "A");
+  dijkstraAlgo(g, "A");
   
   for(int i = 0; i < g->numNode; i++){
     printf("[%s] = %d ", g->label[i], g->visited[i]);
