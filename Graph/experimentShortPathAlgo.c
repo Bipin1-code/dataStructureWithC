@@ -1,5 +1,5 @@
 /*
-  Dijkstra algorithm for to find shortest path.
+  Experiment with algorithms by making graph differently for to find shortest path.
  */
 
 #include <stdio.h>
@@ -166,8 +166,9 @@ void unknownShortPathALgo(Graph *g, const char *start){
   int startIdx = getIndex(g, start);
   rDist[startIdx] = 0;
   pathTracker[startIdx] = 1;
+	//you can change loop to normal,
+	//no need to follow this ring array
   for(int i = startIdx; i < g->numNode; i =((i+1) % g->numNode)){  
-    Node *n = &(g->nodes[i]);
     if(g->visited[i]) break;
     g->visited[i] = 1;
     int j = 0;
