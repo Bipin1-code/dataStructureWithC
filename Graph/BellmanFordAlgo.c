@@ -154,7 +154,7 @@ void relaxEdges(Graph *g, int rDist[]){
     while(j < n->size){
       int curNIdx = getIndex(g, n->adjE[j].dest);
       int distSum = rDist[i] + n->adjE[j].weight;
-      if(distSum < rDist[curNIdx]){
+      if((rDist[i] != 0x3f3f3f3f) && (distSum < rDist[curNIdx])){
 	rDist[curNIdx] = distSum;
       }
       j++;
