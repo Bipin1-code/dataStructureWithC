@@ -16,7 +16,7 @@ typedef struct{
 
 typedef struct Node{
   char name[10];
-  int size; //this track size of adjE array 
+  int size; 
   Edge *adjE;
 } Node;
 
@@ -180,7 +180,7 @@ void bellmanFordAlgo(Graph *g, const char *start){
     while(j < n->size){
       int curNIdx = getIndex(g, n->adjE[j].dest);
       int distSum = rDist[i] + n->adjE[j].weight;
-      if(distSum < rDist[curNIdx]){
+      if((rDist[i] != 0x3f3f3f3f) && (distSum < rDist[curNIdx])){
 	puts("Negative weight cycle exists.\n");
 	return;
       }
@@ -220,8 +220,6 @@ int main(){
   addEdge(g, "C", "D", 2);
   addEdge(g, "B", "C", 3);
   addEdge(g, "A", "B", 5);
- 
-
 
   displayNodesEdgesList(g);
  
