@@ -45,7 +45,7 @@ void push(Node *node, int idx, int pidx, PathStack *path){
 
 PathEntry pop(PathStack *path){
   if(path->size <= 0){
-    PathEntry empty = {NULL, -1};
+    PathEntry empty = {NULL, -1, -1};
     return empty;
   }
   return path->entries[--path->size];
@@ -255,7 +255,7 @@ void handleInternalUnderflow(Node *parent, int underflowChildIdx, PathStack *p, 
 }
 
 //Merge leafNode with left
-void mergeLeafNodes(Node *leftSib, Node *child, Node *parent, int key, int cPsIdx, PathStack *p, Node **root){
+void mergeLeafNodes(Node *leftSib, Node *child, Node *parent, int cPsIdx, PathStack *p, Node **root){
     // Added p and root parameters for recursive handling
     
     int leftSize = leftSib->n;
@@ -304,7 +304,7 @@ void mergeLeafNodes(Node *leftSib, Node *child, Node *parent, int key, int cPsId
 }
 
 // Similarly for with right merge:
-void mergeLeafNodesRight(Node *child, Node *rightSib, Node *parent, int key, int cPsIdx, PathStack *p, Node **root){
+void mergeLeafNodesRight(Node *child, Node *rightSib, Node *parent, int cPsIdx, PathStack *p, Node **root){
   int childSize = child->n;
     
   // Copy all keys from right sibling to child
